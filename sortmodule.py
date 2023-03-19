@@ -1,4 +1,4 @@
-
+#Visar hur en BubbleSort går till
 def bubble_sort(tset):
     
     tlist = tset.copy()

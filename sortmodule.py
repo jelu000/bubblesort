@@ -22,11 +22,19 @@ def bubble_sort(tset):
 
     return tlist
 
-def print_set(tlist):
+def print_list_numbers(tlist):
 
-    langd = len(tlist)
-    langd = 10
-    for tal in tlist:
-        print(tal)
+    string_numbers = " ".join(str(num) for num in tlist)
+    print(string_numbers)
+
+def create_menu():
+    print("\n---:MENY SORTERINGS TEST-----\n")
+    print("1. Använd min egengjorda Bubblesort")
+    print("2. Använd Pythons sort() funtion")
+    print("3. Avsluta programmet\n")
+
+    val = input("\nMata in val: ")
+    
+    return val
 
 

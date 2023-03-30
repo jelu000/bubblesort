@@ -8,6 +8,7 @@ import sortmodule
 #Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
 #Dictionary is a collection which is ordered** and changeable. No duplicate members.
 
+looping = True
 listnumbers = []
 
 for tnum in range(5):
@@ -15,24 +16,37 @@ for tnum in range(5):
     #print(tslumptal)
     listnumbers.append(tslumptal)
 
-print("\n-:SorteringsTest:-")
-print("\n-Skriver listnumbers med slumpade tal----------------------------------")
-sortmodule.print_set(listnumbers)
-
-print("\n-Sorterar med en gammal BubbelSort--------------------------")
-nysorterad_listnumbers = sortmodule.bubble_sort(listnumbers)
-sortmodule.print_set(nysorterad_listnumbers)
-
-fortsatt = input("Vill du sortera arrayen igen med Pythons inbyggda functionsort()? j/n ")
-
-if (fortsatt == "j"):
-    print("\n-Skriver listnumbers igen----------------------------------")
-    sortmodule.print_set(listnumbers)
-
-    print("\n-Sorterar med Pythons sort()----------------------------------")
-    listnumbers.sort()
-    sortmodule.print_set(listnumbers)
 
 
-print ("\n Nu är programmet slut!")
+while looping:
+
+    val = sortmodule.create_menu()
+
+    if (val == "1"):
+        print("\n-Skriver listnumbers med slumpade tal----------------------------------")
+        sortmodule.print_list_numbers(listnumbers)
+        print("\n-Sorterar med en gammal BubbelSort--------------------------")
+        nysorterad_listnumbers = sortmodule.bubble_sort(listnumbers)
+        #sortmodule.print_set(nysorterad_listnumbers)
+        sortmodule.print_list_numbers(nysorterad_listnumbers)
+        
+        fortsatt = input("\nVill du fortsätta? j/n \n")
+        if (fortsatt == "n"):
+            break
+    
+    elif (val == "2"):
+        print("\n-Skriver listnumbers med slumpade tal----------------------------------")
+        listnumbers2sort = listnumbers
+        sortmodule.print_list_numbers(listnumbers)
+        print("\n-Sorterar med Python sort()--------------------------")
+        listnumbers2sort.sort()
+        sortmodule.print_list_numbers(listnumbers2sort)
+        
+        fortsatt = input("\nVill du fortsätta? j/n \n")
+        if (fortsatt == "n"):
+            break
+
+    else:
+        break
+
 

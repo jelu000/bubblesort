@@ -36,7 +36,7 @@ while looping:
     
     elif (val == "2"):
         print("\n-Skriver listnumbers med slumpade tal----------------------------------")
-        listnumbers2sort = listnumbers
+        listnumbers2sort = list(listnumbers)
         sortmodule.print_list_numbers(listnumbers)
         print("\n-Sorterar med Python sort()--------------------------")
         listnumbers2sort.sort()
